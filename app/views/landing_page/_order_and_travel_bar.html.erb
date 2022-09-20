@@ -1,0 +1,8 @@
+<div class="sub-header">
+  <div class="order <%= params[:action].eql?('traveller_form') ? '' : 'active' %>">
+    <%= link_to 'Order', '/listings/new' %>
+  </div>
+  <div class="travel <%= params[:action].eql?('traveller_form') ? 'active' : '' %>">
+    <%= link_to 'Travel', traveller_form_homepage_index_path %>
+  </div>
+</div>

@@ -1,0 +1,121 @@
+<div class="fxg1 fx-c fxs0">
+  <div class="_42255018 _263909d4 bgc-dbb" role="img">
+    <div class="_5cb49a05">
+      <div class="pos-r g">
+        <div class="gr px5 py5 SM_py10 SM_px0 MD_pt18">
+          <div class="gc12 MD_gc6 MD_go1 LG_gc5 LG_go2"><span class="fz-l fw-sb c-w SM_fz-xl"><%= @travel_detail.from_address %> – <%= @travel_detail.to_address %>, <%= @travel_detail.travel_type.eql?('single') ? @travel_detail.travel_round_date.to_date.strftime("%d,%b") : '' %></span></div>
+          <!-- <div class="gc8 d-fx mt8 MD_d-b MD_mt0 MD_gc4 LG_gc3">
+            <div class="c-w MD_ta-r">
+              <div class="fz-l lh-h fw-sb ellipsis SM_fz-xl">$0.00</div>
+              <div class="fz-s MD_fz14">Earnings</div>
+            </div>
+            <div class="pl10 c-w MD_d-n">
+              <div class="fz-l lh-h fw-sb ellipsis SM_fz-xl">$0.00</div>
+              <div class="fz-s">Payout total</div>
+            </div>
+          </div> -->
+          <!-- <div class="gc4 mt8 MD_mt4 MD_gc6 MD_go1 LG_gc5 LG_go2">
+            <div class="fx-r ai-c jc-fe MD_jc-fs">  </div>
+          </div>
+          <div class="d-n gc4 mt0 MD_d-b LG_gc3">
+            <div class="c-w ta-r">
+              <div class="fz-xl lh-h fw-sb ellipsis ">$0.00</div>
+              <div class="fz14">Payout total</div>
+            </div>
+          </div> -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bdc-g12 bdbs-s bdw1 bgc-w">
+    <div class="g">
+      <div class="gr">
+        <div class="gc12 MD_gc10 MD_go1 LG_gc8 LG_go2">
+          <div class="ovy-h wovs-t ovx-s fx-r MD_ovx-h pl5 SM_pl0">
+            <div class="ribbon-menu-item fxs0 pr5 SM_pr10 MD_pr13">
+              <div class="ribbon-menu-item__active py4 ws-nw bdc-tt bdys-s trd300ms trp-ac SM_py5 MD_bdbc-bb-hf MD_c-bb-hf bdbc-bb c-bb"><%= @locations.size %> Orders</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="g mb5">
+    <div class="gr">
+      <div class="gc12 MD_gc10 MD_go1 LG_gc8 LG_go2">
+        <div class="fxd-c ai-c jc-c px5 my5 SM_jc-sb SM_px0 MD_fxd-r d-fx">
+          <div class="d-n tt-u fz-s ls1 SM_d-b">Orders available for delivery</div>
+          <div class="w100p d-fx fxd-r ai-c jc-sb SM_w-a SM_pt5 SM_fxd-rr MD_pt0">
+          </div>
+        </div>
+        <div class="px5 pt2 SM_px0">
+          <div class="_33221a7 _7b8d1241 _181defef _1ead880a _586172a7 _87576c4">
+            <div class="_40a358c5 _181defef _b895302 _b895321">
+              <div class="_a3011e _3133faf9 _7593158b" tabindex="0">
+                <div class="_9ebcb5">
+                  <svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M17.925 8.088l-7.362 8.272c-.142.168-.032.44.188.44h3.599l-2.263 6.856c-.086.264.228.464.417.264l8.925-9.072c.157-.168.04-.448-.18-.448h-4.4l1.5-6.072c.063-.264-.251-.44-.424-.24z" fill="#F2CF17" stroke="none"></path>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M18.35 8.328L16.855 14.4H16L18.098 8c.15 0 .298.144.251.328zm3.15 6.336a.285.285 0 01-.07.184l-8.926 9.072a.245.245 0 01-.385-.032l8.65-9.488h.48c.149 0 .251.128.251.264z" fill="#F5BF00" stroke="none"></path>
+                  </svg>
+                </div>
+                <div class="_31024781 _13620638">Instant match</div>
+              </div>
+            </div>
+            <% if !(@locations.size > 0) %>
+              <div class="_40a358c5 _181defef _b895302 _b895321">
+                <div class="_a3011e _3133faf9 _7593158b" tabindex="0">
+                  <div class="_31024781 _13620638">No&nbsp;delivery offers</div>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+        <div class="order_map">
+          <% @locations.each do |location| %>
+            <% if location.listing.present? %>
+              <div class="mt5">
+                <a class="fx-c fxg1 bgc-w bdw1 bdc-g12 bdr5 bds-s trd300ms trp-bgc p5 MD_bgc-g3-hf" padding="56,0,0,0" href="javascript:;">
+                  <div class="fx-r ai-c miw0">
+                    <div class="_42255018 _263909d4 fxs0 w11 h11 mr4 bdr-c bgc-g3" role="img" style="background-size: cover;"><img class="_1ae89003 author_image" src="<%= location.listing.author.image&.url %>" sizes="4vw" style="opacity: 1;"></div>
+                    <div class="d-fx fxg1 miw0 c-g44">
+                      <div class="mr1 c-b ellipsis"><%= location.listing.author.full_name %></div>
+                      <div class="mr5 fx-r">
+                        <div class="mr1">requested</div>
+                        <%= location.listing.created_at.strftime("%d,%b") %>
+                      </div>
+                    </div>
+                    <div class="c-g44 ml1">No&nbsp;offers yet</div>
+                  </div>
+                  <div class="fx-r mt5 wrap_mobile">
+                    <div class="_42255018 _7c8801f7 fxs0 w75 h75 mr5 bds-s bdw1 bdc-g7 bgc-w bdr5" role="img" style="background-size: contain;"><img class="_1ae89003 listing_image" style="opacity: 1;" src="<%= location.listing.listing_images.first&.image&.url %>" sizes="21vw"></div>
+                    <div class="fxg1 fx-c jc-sb ov-h mobile-gap">
+                      <div>
+                        <div class="fz-l fw-sb wow-bw ellipsis"><%= location.listing.title %></div>
+                        <div class="fz14 pt1">
+                          <div class="ellipsis"><span class="c-g44 pr1">Deliver to</span><span class="pr3"><%= location.address %></span><span class="c-g44 pr1">Deliver from</span><%= location.listing.from_address %></div>
+                          <span class="c-g44 pr1">Before</span>September 13, 2021
+                        </div>
+                      </div>
+                      <div class="bgc-llbb c-g44 bdr5 p4 mt5">
+                        <div>Where to&nbsp;buy&nbsp;<span class="link link--bb"></span></div>
+                        <div>Product price: <span class="c-b"><%= MoneyViewUtils.to_humanized(location.listing.price) %></span></div>
+                      </div>
+                      <div class="fx-r ai-c jc-sb pt3">Traveler reward<span class="fz-xxl lh-h fw-sb">$<%= location.listing.price * 5/100 %></span></div>
+                      <!-- <div class="mt1">
+                        <div tabindex="0" role="button" class="_75f9c68c _18436b87 _5127cf49 _3d512dc5">
+                          <div class="_f322559">
+                            <div class="_499a275e">Make offer</div>
+                          </div>
+                        </div>
+                      </div> -->
+                    </div>
+                  </div>
+                </a>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>  
