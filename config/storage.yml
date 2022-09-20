@@ -16,12 +16,12 @@ local:
 #   upload:
 #     acl: "public-read"
 #     cache_control: 'max-age=3600'
-amazon:
-  service: S3
-  access_key_id: <%= Rails.application.credentials.dig(:aws, :access_key_id) %>
-  secret_access_key: <%= Rails.application.credentials.dig(:aws, :secret_access_key) %>
-  region: xxxxxxxxxxxxxxxxxx
-  bucket: xxxxxxxxxxxxxxxxxx
+# amazon:
+#   service: S3
+#   access_key_id: <%= Rails.application.credentials.dig(:aws, :access_key_id) %>
+#   secret_access_key: <%= Rails.application.credentials.dig(:aws, :secret_access_key) %>
+#   region: xxxxxxxxxxxxxxxxxx
+#   bucket: xxxxxxxxxxxxxxxxxx
 
 # Remember not to checkin your GCS keyfile to a repository
 # google:

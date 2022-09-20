@@ -151,5 +151,5 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   #config.active_storage.service = APP_CONFIG.active_storage_service.to_sym
-  config.active_storage.service = config.active_storage.service = :amazon
+  config.active_storage.service = config.active_storage.service = :local
 end
