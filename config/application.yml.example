@@ -1,0 +1,7 @@
+production:
+  redis_host: localhost
+  redis_cache_namespace: staging-redis-cache
+  redis_port: 6379
+  redis_db: 0
+  image_magick_path: '/usr/bin/'
+  app_encryption_key: 2617463e32b65ec6645b3cb661f9686f2ab608c18ac930ee1295a1c1170504ed

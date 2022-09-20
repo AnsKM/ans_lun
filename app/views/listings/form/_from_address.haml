@@ -1,0 +1,40 @@
+= form.label 'listing[from_address]', 'From', :class => "input"
+= text_field_tag 'listing[from_address]', @listing.from_address, class: 'form-control _75b9316f', placeholder: 'From', id: 'from-gmaps-input-address', required: true
+//=# text_field_tag 'listing[from_address]', '', class: 'form-control _75b9316f', placeholder: 'From', id: 'from-gmaps-input-address', onfocus: "initializeAutocomplete('from-gmaps-input-address', '#from_latitude', '#from_longitude')", required: true
+= hidden_field_tag 'listing[from_address_latitude]', '', class: 'form-control _75b9316f', id: 'from_latitude'
+= hidden_field_tag 'listing[from_address_longitude]', '', class: 'form-control _75b9316f', id: 'from_longitude'
+
+- if false
+  - required = @current_community.listing_location_required?
+  - title = t(".location") + (required ? "*" : "")
+  - required_class = (required ? "required" : "")
+  - from_address = @listing.from_check_address
+
+  = form.label :origin, title, :class => "input"
+  - if @current_community.fuzzy_location?
+    - info_text = t(".the_exact_location")
+    = render partial: "layouts/info_text", locals: { text:  info_text}
+  = text_field_tag 'listing[from_address]', '', :class => "text_field #{required_class}", :onkeyup => "timed_input(this)", autocomplete: 'off'
+  = form.fields_for :from_check_address, include_id: false do |loc|
+    = loc.hidden_field :address, :value => from_address.address
+    = loc.hidden_field :google_address, :value => from_address.google_address
+    = loc.hidden_field :latitude, :value => from_address.latitude
+    = loc.hidden_field :longitude, :value => from_address.longitude
+
+- content_for :extra_javascript do
+  :javascript
+    function initializeAutocomplete(selector_name, latitude_id, longitude_id){
+      var input = document.getElementById(selector_name);
+      var options = {};
+      var autocomplete = new google.maps.places.Autocomplete(input, options);
+      google.maps.event.addListener(autocomplete, 'place_changed', function() {
+        var place = autocomplete.getPlace();
+        if (place.geometry){
+          var lat =  place.geometry.location.lat();
+          var lng =  place.geometry.location.lng();
+          $(latitude_id).val(lat);
+          $(longitude_id).val(lng);
+        }
+      });
+    }
+

@@ -1,0 +1,252 @@
+<%= render partial: "landing_page/order_and_travel_bar" %>
+<div class="_42255018 _263909d4 SM_py8 bgc-g44" role="img" style="background-image: url(&quot;data:image/jpeg;base64,/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAOABkDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAQIGBf/EACMQAAIBAgQHAAAAAAAAAAAAAAECAAMFBBIhMRETFSIyUVL/xAAWAQEBAQAAAAAAAAAAAAAAAAACAAP/xAAaEQACAgMAAAAAAAAAAAAAAAAAAQIRAxJB/9oADAMBAAIRAxEAPwDIN17vKCreMg3kfQxLuNTHruzLvC4dKOW3RXpelZOOYResL9SHFd10Bg57+zAomux//9k=&quot;); background-size: cover;">
+  <div class="_5cb49a05">
+    <div class="g SM_py13">
+      <div class="gr">
+        <div class="gc12 fxd-c d-fx jc-c c-w MD_gc6">
+          <div class="px5 SM_px0">
+            <div class="fz-xxxl lh-h fw-b">Earn $200+ USD every time you travel abroad</div>
+            <div class="pt5 SM_fz-l">Deliver products to&nbsp;international shoppers and cut your travel costs in&nbsp;half.</div>
+            <div class="py8 MD_pt13">
+              <a class="fx-r link link--w" padding="56,0,0,0" href="/en/infos/how_to_use">
+                How Samaanx works
+                <svg width="7" height="13" viewBox="0 0 7 13" version="1.1" xmlns="http://www.w3.org/2000/svg" class="w1 h-a ml3 st-cc">
+                  <path d="M.5.5l6 6-6 6" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="gc12 d-fx ai-c jc-c MD_gc6">
+          <div class="w100p p5 bgc-w SM_bdr5">
+            <div class="fz-l fw-sb SM_ta-c">Add your trip details to&nbsp;start earning money</div>
+            <div class="pt4">
+              <div class="_33221a7 _7b8d1241 _181defef _1ead880a _87576c2">
+                <%= form_for '', url: travel_details_path, html: {class: 'form-inline new_travel_detail'} do |form| %>
+                <div class="_7b8d1241 _181defef _1ead880a _b895300">
+                  <div class="_33221a7 _7b8d1241 _181defef _1ead880a _87576c4">
+                    <div class="_7b8d1241 _181defef _1ead880a _b895302"></div>
+                    <div class="_7b8d1241 _181defef _1ead880a _b895302">
+                      <div class="_7aefafa0 _7af6f5fd" role="menu">
+                        <div class="_1f49a0ce" style="left: 0%; width: 50%;"></div>
+                        <div class="_7af3b56f _64946704 _1c9edb7d first_role" role="menuitem" aria-checked="true"><span class="_1c9e9f36">One way</span></div>
+                        <div class="_7af3b56f _1c9edb7d second_role" role="menuitem" aria-checked="false"><span class="_1c9e9f36">Round trip</span></div>
+                      </div>
+                    </div>
+                    <div class="_7b8d1241 _181defef _1ead880a _b895302">
+                      <div class="_4790378f _52852f44 _478f7344 _304e4bcc _3b1e0e72">
+                        <div class="_5ed8ddc4 _1532bdb1">
+                          <div class="_517c259">
+                            <%= text_field_tag 'travel_detail[from_address]', '', class: 'form-control _75b9316f', placeholder: 'From', id: 'from-gmaps-input-address', onfocus: "initializeAutocomplete('from-gmaps-input-address', '#from_latitude', '#from_longitude')", required: true %>
+                            <input type="hidden" name="travel_detail[from_address_latitude]" id="from_latitude" value="<%= params[:from_address_latitude]%>" >
+                            <input type="hidden" name="travel_detail[from_address_longitude]" id="from_longitude" value="<%= params[:from_address_longitude]%>" >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="_7b8d1241 _181defef _1ead880a _b895302">
+                      <div class="_4790378f _52852f44 _478f7344 _304e4bcc _3b1e0e72">
+                        <div class="_5ed8ddc4 _1532bdb1">
+                          <div class="_517c259">
+                            <%= text_field_tag 'travel_detail[to_address]', '', class: 'form-control _75b9316f', placeholder: 'To', id: 'to-gmaps-input-address', onfocus: "initializeAutocomplete('to-gmaps-input-address', '#to_address_latitude', '#to_address_longitude')", required: true %>
+                            <input type="hidden" name="travel_detail[to_address_latitude]" id="to_address_latitude" value="<%= params[:to_address_latitude]%>" >
+                            <input type="hidden" name="travel_detail[to_address_longitude]" id="to_address_longitude" value="<%= params[:to_address_longitude]%>" >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="_7b8d1241 _181defef _1ead880a _b895302">
+                      <div tabindex="0" class="_4790378f _52852f44 _51d367b2 _304e4bcc">
+                        <div class="_5ed8ddc4 _1532bdb1">
+                          <div class="_517c259">
+                            <div class="_191442f3 _5088de3c"></div>
+                          </div>
+                          <%= text_field_tag 'travel_single_date', '', class: 'form-control travel_single_date', placeholder: 'Travel date', required: true %>
+                          <%= text_field_tag 'travel_round_date', '', class: 'form-control travel_round_date hidden', placeholder: 'Travel date', required: false %>
+                          <div class="datepicker_container"></div>
+                        </div>
+                        <svg class="calender_icon" width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M25 10H7v14h18V10zM11 8v4m10-4v4M7 15h18" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="_7b8d1241 _181defef _1ead880a _b895300">
+                  <div tabindex="0" role="button" class="_75f9c68c _18436b87 _5127cf49 _3d512dc5">
+                    <div class="_f322559">
+                      <%= form.submit "Add trip", class: 'btn btn-success _499a275e justify-text-center' %>
+                    </div>
+                  </div>
+                </div>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<section class="bgc-llbb">
+  <div class="g">
+    <div class="gr pt3 pb8 px5 SM_px0 MD_py10">
+      <div class="fx-r mt5 MD_mt0  go0 gc12 gc12 d-fx SM_go0 SM_gc12 SM_gc12 SM_d-fx MD_go0 MD_gc4 MD_gc4 MD_d-fx LG_go0 LG_gc4 LG_gc4 LG_d-fx">
+        <div class="w9 fi-bb">
+          <svg width="35" height="35" viewBox="0 0 35 35" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" xml:space="preserve">
+            <path d="M17.5 0a17.5 17.5 0 100 35 17.5 17.5 0 100-35z" stroke="none"></path>
+            <g fill="none" stroke="#fff">
+              <path d="M17.5 26c4.7 0 8.5-3.8 8.5-8.5S22.2 9 17.5 9 9 12.8 9 17.5s3.8 8.5 8.5 8.5z"></path>
+              <path d="M13.7 17.4l3.6 3.1 4.5-5.4" stroke-linecap="round" stroke-linejoin="round"></path>
+            </g>
+          </svg>
+        </div>
+        <div class="fx-c ml5">
+          <div class="MD_fxg1">
+            <div class="fw-sb">Guaranteed Payout</div>
+            <div class="fz-s c-g44">Shoppers pay Grabr when they accept your offer.</div>
+          </div>
+        </div>
+      </div>
+      <div class="fx-r mt5 MD_mt0  go0 gc12 gc12 d-fx SM_go0 SM_gc12 SM_gc12 SM_d-fx MD_go0 MD_gc4 MD_gc4 MD_d-fx LG_go0 LG_gc4 LG_gc4 LG_d-fx">
+        <div class="w9 fi-bb">
+          <svg width="35" height="35" viewBox="0 0 35 35" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.5 0a17.5 17.5 0 100 35 17.5 17.5 0 100-35z" stroke="none"></path>
+            <path d="M18 22l5-5m-5 5l-5-5m5 5V10" stroke-linecap="round" stroke-linejoin="round" fill="none" stroke="#fff"></path>
+            <path stroke-linecap="round" d="M12.5 25.5h11" fill="none" stroke="#fff"></path>
+          </svg>
+        </div>
+        <div class="fx-c ml5">
+          <div class="MD_fxg1">
+            <div class="fw-sb">Automated Deposit</div>
+            <div class="fz-s c-g44">Payouts directly to&nbsp;your bank account within 3-15 business days of&nbsp;each confirmed delivery.</div>
+          </div>
+        </div>
+      </div>
+      <div class="fx-r mt5 MD_mt0  go0 gc12 gc12 d-fx SM_go0 SM_gc12 SM_gc12 SM_d-fx MD_go0 MD_gc4 MD_gc4 MD_d-fx LG_go0 LG_gc4 LG_gc4 LG_d-fx">
+        <div class="w9 fi-bb">
+          <svg width="35" height="35" viewBox="0 0 35 35" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" xml:space="preserve">
+            <path d="M17.5 0a17.5 17.5 0 100 35 17.5 17.5 0 100-35z" stroke="none"></path>
+            <path d="M26 22.5c0 .3-.3.5-.5.5h-16c-.3 0-.5-.3-.5-.5v-10c0-.3.3-.5.5-.5h15.9c.3 0 .5.3.5.5v10z" fill="none" stroke="#fff"></path>
+            <path d="M17.5 14.5a3 3 0 100 6 3 3 0 100-6z" fill="none" stroke="#fff"></path>
+          </svg>
+        </div>
+        <div class="fx-c ml5">
+          <div class="MD_fxg1">
+            <div class="fw-sb">No&nbsp;Fee</div>
+            <div class="fz-s c-g44">There is&nbsp;no&nbsp;fee to&nbsp;travelers for using Grabr. Only earnings.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<% if @current_user.present? %>
+  <section class="py8 MD_py15 section--w">
+    <div class="g">
+      <div class="gr pb3 MD_pb10">
+        <div class="gc12">
+          <h1 class="fz-xl lh-h fw-b SM_fz-xxxl section__title px5 ta-c SM_px0">My Travel Destinations</h1>
+        </div>
+        <div class="gc12 mt4 SM_gc10 SM_go1 MD_gc8 MD_go2">
+          <div class="section__subtitle px5 ta-c SM_px0 SM_fz-l">Need a&nbsp;little inspiration? Browse orders from these cities with most orders to&nbsp;decide where to&nbsp;go&nbsp;next.</div>
+        </div>
+      </div>
+    </div>
+    <div class="w100p pt5">
+      <div class="carousel-section__carousel w100p pos-r px4 ta-c ov-h SM_px0">
+        <div class="d-ib va-t pos-r w100p MD_w-a">
+          <div class="carousel pos-r g">
+            <div class="gr" style="transform: translate3d(0px, 0px, 0px); transition-duration: 300ms;">
+              <% @current_user.travel_details.each do |travel| %>
+                <% if travel.id.present? %>
+                  <div class="fx-r gc12 SM_gc6 MD_gc4 LG_gc3">
+                    <%= link_to travel_detail_path(travel) , class: 'w100p mx1 SM_mx0 fx-c trd300ms trp-ac ta-l bds-s bdc-g12 bdw1 bdr5 bgc-w bgc-g3-hf' do %>
+                      <div class="fxg1 w100p px5 mt5">
+                        <div class="fz-l fw-sb"><%= travel.from_address %>-<%= travel.to_address %></div>
+                        <div class="fz14 c-g44 mt1"><%= travel.travel_type.eql?('single') ? 'One way' : 'Round Trip' %></div>
+                      </div>
+                      <div class="_42255018 _263909d4 _16f9997 w100p bgc-g3 my4 c-g12" role="img" style="padding-bottom: 100%; background-image: url(&quot;data:image/jpeg;base64,/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAZABkDASIAAhEBAxEB/8QAGwAAAQQDAAAAAAAAAAAAAAAABAABBQcDBgj/xAAkEAABBAEDBAMBAAAAAAAAAAABAAIDEQQFBhIUM1JxFiEyUf/EABYBAQEBAAAAAAAAAAAAAAAAAAMEAf/EABsRAAIDAAMAAAAAAAAAAAAAAAABAgMREhNR/9oADAMBAAIRAxEAPwDoqPU4XssOCxt1aEv48wqg0/cb+movN+0GdxTMyLDzVqd2+C9OF7DNiqy4Juuh8wqSyN3ysjoPNoD5lkeTlsbeSMlVhrOJO4N42iSCftR2N+1Lxds+lEpPC6aI6Vw504pcY/6h83vpJ646gZvGf//Z&quot;); background-size: cover;"><img class="_1ae89003" src="" srcset="" sizes="19vw" style="opacity: 1;"></div>
+                      <div class="w100p px5 fx-r jc-sb ai-c mb3">
+                        <div class="fxg1 fx-c"><span class="c-g44">Available in&nbsp;<%= travel.travel_round_date %></span><span class="fw-sb fz-l SM_fz-xl"></span></div>
+                        <svg width="7" height="13" viewBox="0 0 7 13" version="1.1" xmlns="http://www.w3.org/2000/svg" class="ml5 w4 h5 st-cc">
+                          <path d="M.5.5l6 6-6 6" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                      </div>
+                    <% end %>
+                  </div>
+                <% end %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<% end %>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCnazXBDrqlOy4ffUHMZjgzHKe_NgezXhw&sensor=FALSE&libraries=places"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-date-range-picker/0.14.2/daterangepicker.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.16.0/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-date-range-picker/0.14.2/jquery.daterangepicker.min.js"></script>
+<script>
+  $('.travel_round_date').dateRangePicker({
+    inline: true,
+    format: 'DD-MM-YYYY',
+    container: '.datepicker_container',
+    alwaysOpen: false,
+    singleMonth: false,
+    showTopbar: false
+  })
+  .bind('datepicker-change', (e,data) => {
+    $('.travel_round_date').val(data.value);
+  })
+  
+  $('.travel_single_date').on('focus', function() {
+    $(this)
+      .datepicker({
+        minDate: 0,
+        format: 'dd-mm-yyyy',
+        showButtonPanel: true,
+      })
+      .datepicker('show');
+  });
+  $('._7af3b56f').click(function(){
+    $(this).css('color','#fff');
+    $(this).siblings().css('color','#f9943b');
+  });
+  $('.first_role').click(function(){
+    $(this).prev().css('left', '0%')
+    $('.travel_single_date').removeClass('hidden');
+    $('.travel_round_date').val('');
+    $('.travel_round_date').addClass('hidden');
+    $('.travel_round_date').prop('required', false)
+    $('.travel_single_date').prop('required', true)
+  
+  })
+  $('.second_role').click(function(){
+    $(this).prev().prev().css('left', '50%')
+    $('.travel_single_date').addClass('hidden');
+    $('.travel_single_date').val('');
+    $('.travel_round_date').removeClass('hidden');
+    $('.travel_round_date').prop('required', true)
+    $('.travel_single_date').prop('required', false)
+  
+  
+  })
+  
+  function initializeAutocomplete(selector_name, latitude_id, longitude_id){
+    var input = document.getElementById(selector_name);
+    var options = {};
+    var autocomplete = new google.maps.places.Autocomplete(input, options);
+    google.maps.event.addListener(autocomplete, 'place_changed', function() {
+      var place = autocomplete.getPlace();
+      if (place.geometry){
+        var lat =  place.geometry.location.lat();
+        var lng =  place.geometry.location.lng();
+        $(latitude_id).val(lat);
+        $(longitude_id).val(lng);
+      }
+    });
+  }
+</script>
