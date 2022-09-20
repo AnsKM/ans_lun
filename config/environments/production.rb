@@ -23,10 +23,10 @@ Rails.application.configure do
   config.action_controller.forgery_protection_origin_check = false
 
   Paperclip.options[:command_path] = ENV['image_magick_path'] if ENV['image_magick_path'].present?
-  
+
   # Ensures that a master key has been made available in either ENV["RAILS_MASTER_KEY"]
   # or in config/master.key. This key is used to decrypt credentials (and other encrypted files).
-  # config.require_master_key = true
+  config.require_master_key = true
 
   # Specifies the header that your server uses for sending files
   config.action_dispatch.x_sendfile_header = "X-Sendfile"
@@ -150,5 +150,6 @@ Rails.application.configure do
   # We don't need schema dumps in this environment
   config.active_record.dump_schema_after_migration = false
 
-  config.active_storage.service = APP_CONFIG.active_storage_service.to_sym
+  #config.active_storage.service = APP_CONFIG.active_storage_service.to_sym
+  config.active_storage.service = config.active_storage.service = :amazon
 end
